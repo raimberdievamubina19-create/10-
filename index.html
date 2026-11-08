@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>10-класс · Мектеп № 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eceff8;--card:#fff;--ink:#141b34;--mute:#5d6580;--line:#dfe2ef;--blue:#4a6fd8;--blueL:#e2e7fb;--yel:#e9b44c;--yelL:#fdf1d3;--grn:#4f9a73;--grnL:#dcefe4;--red:#d96b57;--redL:#f9ddd8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10142a;--card:#1a2040;--ink:#eef0fb;--mute:#a2a9c7;--line:#2c3358;--blueL:#243066;--yelL:#4a3d1c;--grnL:#1c3a2e;--redL:#4a2a28}}
+:root[data-theme="dark"]{--bg:#10142a;--card:#1a2040;--ink:#eef0fb;--mute:#a2a9c7;--line:#2c3358;--blueL:#243066;--yelL:#4a3d1c;--grnL:#1c3a2e;--redL:#4a2a28}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.wrap{max-width:560px;margin:0 auto;padding:18px 14px 40px}
+h1,h2,h3{font-family:Unbounded,Inter,sans-serif;margin:0}
+.sch{color:var(--mute);font-size:15px}
+h1{font-size:34px;font-weight:800;margin:4px 0 8px}
+.tr{color:var(--mute)}.tr b{color:var(--ink)}
+.tabs{display:flex;gap:8px;margin:20px 0 0;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;min-width:92px;border:0;border-radius:18px 18px 0 0;padding:12px 10px;font:600 14px Inter,sans-serif;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;border-top:5px solid transparent}
+.tab span{font-size:24px}
+.t0{background:var(--blueL)}.t1{background:var(--yelL)}.t2{background:var(--grnL)}.t3{background:var(--redL)}
+.tab.on{background:var(--card)}
+.t0.on{border-color:var(--blue)}.t1.on{border-color:var(--yel)}.t2.on{border-color:var(--grn)}.t3.on{border-color:var(--red)}
+.panel{background:var(--card);padding:24px 18px 28px;border-radius:0 0 22px 22px;display:none}
+.panel.on{display:block}
+h2{font-size:24px;font-weight:800}
+.sub{color:var(--mute);margin:8px 0 18px}
+input{width:100%;padding:16px;border-radius:16px;border:2px solid var(--line);background:transparent;color:var(--ink);font:inherit;margin-bottom:6px}
+.row{display:flex;gap:14px;padding:14px 4px;border-bottom:1px solid var(--line);font-weight:600}
+.row i{font-style:normal;color:var(--mute);width:26px;font-weight:500}
+.chips{display:flex;gap:8px;overflow-x:auto;margin-bottom:14px;scrollbar-width:none}
+.chip{flex:0 0 auto;padding:12px 20px;border-radius:30px;border:2px solid var(--line);background:transparent;color:var(--ink);font:600 15px Inter,sans-serif;cursor:pointer}
+.chip.on{background:var(--ink);color:var(--card);border-color:var(--ink)}
+.les{display:flex;gap:16px;padding:14px 16px;border:1px solid var(--line);border-radius:18px;margin-bottom:10px}
+.les em{font:800 26px Unbounded,sans-serif;color:var(--yel);font-style:normal;width:28px}
+.les b{display:block;font-size:18px}.les small{color:var(--mute);font-size:15px}
+.day{border:2px solid var(--line);border-radius:22px;padding:16px;margin-bottom:12px}
+.day h3{font-size:17px;margin-bottom:10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.day.today{background:var(--grnL);border-color:var(--grn)}
+.day.past{opacity:.5}
+.pill{display:inline-block;background:var(--grn);color:#fff;font:600 12px Inter,sans-serif;padding:4px 12px;border-radius:20px}
+.nm{display:block;border:2px solid var(--line);border-radius:30px;padding:10px 18px;margin-top:8px;font-size:16px;background:var(--card)}
+.par{border-radius:24px;padding:18px;margin-bottom:12px;background:var(--redL)}
+.par.top{background:var(--red);color:#fff}
+.par small{display:block;font-weight:600;color:#9a3a2b;margin-bottom:4px}
+.par.top small{color:#fff}
+.par h3{font-size:18px;margin-bottom:6px;line-height:1.3}
+.par p{margin:6px 0 0;color:var(--mute)}.par.top p{color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .par small{color:#f2a99b}}
+.rw{margin-left:auto;background:var(--blueL);color:var(--blue);padding:6px 14px;border-radius:20px;font-size:14px;font-weight:600;white-space:nowrap;align-self:center}
+.foot{text-align:center;color:var(--mute);margin-top:22px;font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="sch">Мектеп № 5</div>
+<h1>10-класс</h1>
+<div class="tr">Класс жетекчи: <b>Ашым кызы Гүлүмкан</b></div>
+<div class="tabs" id="tabs">
+<button class="tab t0 on"><span>👥</span>Окуучулар</button>
+<button class="tab t1"><span>🗓️</span>Сабактар</button>
+<button class="tab t2"><span>🧹</span>Дежурство</button>
+<button class="tab t3"><span>🏛️</span>Парламент</button>
+</div>
+<section class="panel on" id="p0">
+<h2>Окуучулардын тизмеси</h2>
+<div class="sub" id="cnt"></div>
+<input id="q" placeholder="Окуучуну издөө">
+<div id="list"></div>
+</section>
+<section class="panel" id="p1">
+<h2>Сабактардын жүгүртмөсү</h2>
+<div class="sub" id="ssub"></div>
+<div class="chips" id="chips"></div>
+<div id="les"></div>
+</section>
+<section class="panel" id="p2">
+<h2>Дежурство</h2>
+<div class="sub">Кезматчылар тегерек боюнча алмашат: тизме бүткөндөн кийин кайра башынан башталат.</div>
+<div id="duty"></div>
+</section>
+<section class="panel" id="p3">
+<h2>Класс парламенти</h2>
+<div class="sub">Класс тандаган балдар.</div>
+<div id="par"></div>
+</section>
+<div class="foot">2026/2027 окуу жылы</div>
+</div>
+<script>
+var S=[["Абдималикова Айзирек","1–2"],["Көчкөнбаева Айжан","3"],["Раимбердиева Мубина","1–2"],["Айдарова Аделья","3"],["Зувурудунова Бегимай","1–2"],["Орунбаев Куштар","3"],["Мажитов Арген","3"],["Жолдошбаева Наргиза","1–2"],["Абдуманнапова Раяна","1–2"],["Орунбаева Клара","1–2"],["Саттарова Зарина","1–2"],["Мамасыдыкова Раяна","1–2"],["Акимова Насыйкат","3"],["Кахаров Нуржигит","3"],["Токтоназаров Кайрат","3"],["Ганиева Асема","1–2"]];
+var T=["08:00–08:45","08:50–09:35","09:40–10:25","10:35–11:20","11:25–12:10","12:15–13:00"];
+var D=[["Дүйшөмбү","Тарых","Алгебра","Физика","География","Чет тили","Тарбия саат"],
+["Шейшемби","Орус тили","Алгебра","Биология","Литература","Дене тарбия"],
+["Шаршемби","Адабият","Кыргыз тили","Химия","Адабият","Тарых","Алгебра"],
+["Бейшемби","Орус тили","Физика","Алгебра","Адам жана коом","Дене тарбия"],
+["Жума","Орус тили","Кыргыз тили","Адабият","Химия","Чет тили","Физика"]];
+var DU=[["Мажитов Арген","Кахаров Нуржигит"],["Мамасыдыкова Раяна","Зувурудунова Бегимай"],["Көчкөнбаева Айжан","Орунбаева Клара"],["Абдималикова Айзирек","Ганиева Асема"],["Раимбердиева Мубина","Абдуманнапова Раяна"],["Жолдошбаева Наргиза","Саттарова Зарина"],["Токтоназаров Кайрат","Орунбаев Куштар"],["Акимова Насыйкат","Айдарова Аделья"]];
+var P=[["Класс старостасы","Раимбердиева Мубина","Жыйындарды алып барат, класстын атынан сүйлөйт",1],
+["Староста орун басары","Мажитов Арген","Старостага жардам берет жана анын ордун алмаштырат"],
+["Окуу сектору","Жолдошбаева Наргиза","Окууга жардам берет, бааларды көзөмөлдөйт"],
+["Спорт сектору · балдар","Кахаров Нуржигит","Балдар үчүн спорттук жарыштарды уюштурат"],
+["Спорт сектору · кыздар","Айдарова Аделья","Кыздар үчүн спорт жана жарыштарды уюштурат"],
+["Маданият сектору","Токтоназаров Кайрат","Майрамдарды жана концерттерди даярдайт"],
+["Тазалык сектору","Абдуманнапова Раяна","Класстагы тазалыкты көзөмөлдөйт"],
+["Аялдар кеңеши","Көчкөнбаева Айжан","Класстагы кыздардын кызыкчылыгын коргойт"],
+["Эркектер кеңеши","Орунбаев Куштар","Класстагы балдардын кызыкчылыгын коргойт"]];
+var $=function(i){return document.getElementById(i)};
+var now=new Date(),wd=now.getDay(),sel=(wd>=1&&wd<=5)?wd-1:-1;
+var DN=["Жекшемби","Дүйшөмбү","Шейшемби","Шаршемби","Бейшемби","Жума","Ишемби"];
+function pad(x){return(x<10?"0":"")+x}
+function list(f){f=(f||"").toLowerCase();var h="";S.forEach(function(s,i){if(s[0].toLowerCase().indexOf(f)>-1)h+='<div class="row"><i>'+(i+1)+'</i><span>'+s[0]+'</span></div>'});$("list").innerHTML=h||'<div class="sub">Табылган жок</div>'}
+$("cnt").textContent="Класста "+S.length+" окуучу бар";
+list();$("q").oninput=function(){list(this.value)};
+function chips(){var h="";D.forEach(function(d,i){h+='<button class="chip'+(i===sel?" on":"")+'" data-i="'+i+'">'+d[0].slice(0,2)+'</button>'});h+='<button class="chip'+(sel===-2?" on":"")+'" data-i="-2">Бүт апта</button>';$("chips").innerHTML=h}
+function les(){var h="",days=sel===-2?D:(sel>=0?[D[sel]]:[]);
+if(sel===-1)$("ssub").textContent="Бүгүн "+DN[wd]+". Күндү тандаңыз.";
+else if(sel===-2)$("ssub").textContent="Бүт апта.";
+else $("ssub").textContent=(sel===wd-1?"Бүгүн, ":"")+D[sel][0]+". Сабактар: "+(D[sel].length-1)+".";
+days.forEach(function(d){if(sel===-2)h+='<h3 style="margin:16px 0 10px;font-size:17px">'+d[0]+'</h3>';d.slice(1).forEach(function(s,i){h+='<div class="les"><em>'+(i+1)+'</em><div><b>'+s+'</b><small>'+T[i]+'</small></div></div>'})});$("les").innerHTML=h}
+$("chips").onclick=function(e){var i=e.target.getAttribute("data-i");if(i===null)return;sel=+i;chips();les()};
+chips();les();
+function duty(){var h="",t=new Date(now.getFullYear(),now.getMonth(),now.getDate()),base=new Date(2026,9,26),c=new Date(t<base?base:t),k=0,x=new Date(base),n=0,g=0;
+while(x<c){var w=x.getDay();if(w>0&&w<6)k++;x.setDate(x.getDate()+1)}
+while(n<DU.length&&g++<400){var w2=c.getDay();if(w2>0&&w2<6){var cls="day",pill="";if(c.getTime()===t.getTime()){cls+=" today";pill='<span class="pill">бүгүн</span>'}
+h+='<div class="'+cls+'"><h3>'+DN[w2]+" · "+pad(c.getDate())+"."+pad(c.getMonth()+1)+pill+'</h3>'+DU[k%DU.length].map(function(s){return'<span class="nm">'+s+'</span>'}).join("")+'</div>';k++;n++}c.setDate(c.getDate()+1)}
+$("duty").innerHTML=h}
+duty();
+var ph="";P.forEach(function(p){ph+='<div class="par'+(p[3]?" top":"")+'"><small>'+p[0]+'</small><h3>'+p[1]+'</h3><p>'+p[2]+'</p></div>'});$("par").innerHTML=ph;
+var tb=document.querySelectorAll(".tab");tb.forEach(function(b,i){b.onclick=function(){tb.forEach(function(y,j){y.classList.toggle("on",i===j);$("p"+j).classList.toggle("on",i===j)})}});
+</script>
+</body>
+</html>
